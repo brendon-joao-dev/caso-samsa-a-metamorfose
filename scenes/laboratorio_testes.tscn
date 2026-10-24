@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://868pw8xwx71s"]
+
+[ext_resource type="PackedScene" uid="uid://c7e1fiwkjt1ij" path="res://scenes/terreno/cenario.tscn" id="1_nmont"]
+[ext_resource type="PackedScene" uid="uid://bpqyc5g83nxdx" path="res://scenes/personagens/personagem.tscn" id="2_h3njr"]
+
+[node name="LaboratorioTestes" type="Node2D" unique_id=2055708587]
+
+[node name="Cenario" parent="." unique_id=121263673 instance=ExtResource("1_nmont")]
+
+[node name="Personagem" parent="." unique_id=1287101925 instance=ExtResource("2_h3njr")]
+position = Vector2(192, 112)

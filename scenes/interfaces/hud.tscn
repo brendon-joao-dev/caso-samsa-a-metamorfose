@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://c4wy852xrv28l"]
 
 [ext_resource type="StyleBox" uid="uid://c6xg3hqkydkbh" path="res://scenes/interfaces/cores/barra_vazia.tres" id="1_6vu2j"]
+[ext_resource type="Texture2D" uid="uid://cyrnq7gpr6c1r" path="res://assets/cursor_pixel/tiles/tile_0133.png" id="1_cpmtm"]
 [ext_resource type="StyleBox" uid="uid://2qyh2unuj8p1" path="res://scenes/interfaces/cores/botao_normal.tres" id="1_q7lvh"]
 [ext_resource type="StyleBox" uid="uid://b861vnrxpw7f0" path="res://scenes/interfaces/cores/botao_pressionado.tres" id="2_3ifhn"]
 [ext_resource type="StyleBox" uid="uid://458um4dkk265" path="res://scenes/interfaces/cores/barra_cheia.tres" id="2_cpmtm"]
 [ext_resource type="StyleBox" uid="uid://c1ic55p7vh5k4" path="res://scenes/interfaces/cores/botao_selecionado.tres" id="3_a15dx"]
+[ext_resource type="Texture2D" uid="uid://xea7xbe8xfjv" path="res://assets/cursor_pixel/tiles/tile_0078.png" id="4_de2ps"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1321035823]
 
@@ -37,20 +39,43 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 5
 
-[node name="BarraStamina" type="ProgressBar" parent="Padrao/MarginBarras/Barras" unique_id=1816625999]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 25)
+[node name="Stamina" type="HBoxContainer" parent="Padrao/MarginBarras/Barras" unique_id=976769467]
 layout_mode = 2
-size_flags_vertical = 1
+theme_override_constants/separation = 10
+
+[node name="IconSapatos" type="TextureRect" parent="Padrao/MarginBarras/Barras/Stamina" unique_id=42757475]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_de2ps")
+
+[node name="BarraStamina" type="ProgressBar" parent="Padrao/MarginBarras/Barras/Stamina" unique_id=1816625999]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 280)
+custom_maximum_size = Vector2(-1, 25)
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/background = ExtResource("1_6vu2j")
 theme_override_styles/fill = ExtResource("2_cpmtm")
-value = 50.0
+value = 100.0
 show_percentage = false
 
-[node name="BarraBateriaLanterna" type="ProgressBar" parent="Padrao/MarginBarras/Barras" unique_id=1258706275]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 25)
+[node name="Lanterna" type="HBoxContainer" parent="Padrao/MarginBarras/Barras" unique_id=383691895]
 layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IconLanterna" type="TextureRect" parent="Padrao/MarginBarras/Barras/Lanterna" unique_id=685816459]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_cpmtm")
+
+[node name="BarraBateriaLanterna" type="ProgressBar" parent="Padrao/MarginBarras/Barras/Lanterna" unique_id=465688144]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 25)
+custom_maximum_size = Vector2(280, 25)
+layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/background = ExtResource("1_6vu2j")
 theme_override_styles/fill = ExtResource("2_cpmtm")
 value = 100.0

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://c4wy852xrv28l"]
+
+[ext_resource type="StyleBox" uid="uid://c6xg3hqkydkbh" path="res://scenes/interfaces/cores/barra_vazia.tres" id="1_6vu2j"]
+[ext_resource type="StyleBox" uid="uid://2qyh2unuj8p1" path="res://scenes/interfaces/cores/botao_normal.tres" id="1_q7lvh"]
+[ext_resource type="StyleBox" uid="uid://b861vnrxpw7f0" path="res://scenes/interfaces/cores/botao_pressionado.tres" id="2_3ifhn"]
+[ext_resource type="StyleBox" uid="uid://458um4dkk265" path="res://scenes/interfaces/cores/barra_cheia.tres" id="2_cpmtm"]
+[ext_resource type="StyleBox" uid="uid://c1ic55p7vh5k4" path="res://scenes/interfaces/cores/botao_selecionado.tres" id="3_a15dx"]
+
+[node name="Hud" type="CanvasLayer" unique_id=1321035823]
+
+[node name="Padrao" type="Control" parent="." unique_id=1631450567]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginBarras" type="MarginContainer" parent="Padrao" unique_id=127987964]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.277
+anchor_bottom = 0.15
+offset_right = 0.8959961
+offset_bottom = 2.7999954
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Barras" type="VBoxContainer" parent="Padrao/MarginBarras" unique_id=2104567060]
+custom_maximum_size = Vector2(300, -1)
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="BarraStamina" type="ProgressBar" parent="Padrao/MarginBarras/Barras" unique_id=1816625999]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/background = ExtResource("1_6vu2j")
+theme_override_styles/fill = ExtResource("2_cpmtm")
+value = 50.0
+show_percentage = false
+
+[node name="BarraBateriaLanterna" type="ProgressBar" parent="Padrao/MarginBarras/Barras" unique_id=1258706275]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/background = ExtResource("1_6vu2j")
+theme_override_styles/fill = ExtResource("2_cpmtm")
+value = 100.0
+show_percentage = false
+
+[node name="MarginInventario" type="MarginContainer" parent="Padrao" unique_id=39443975]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.88900006
+anchor_right = 1.0
+anchor_bottom = 0.49400002
+offset_left = -0.12805176
+offset_bottom = -0.11199951
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="Inventario" type="VBoxContainer" parent="Padrao/MarginInventario" unique_id=948045717]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Slot1" type="Button" parent="Padrao/MarginInventario/Inventario" unique_id=1660149314]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("1_q7lvh")
+theme_override_styles/pressed = ExtResource("2_3ifhn")
+theme_override_styles/hover = ExtResource("3_a15dx")
+toggle_mode = true
+
+[node name="Slot2" type="Button" parent="Padrao/MarginInventario/Inventario" unique_id=847541466]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("1_q7lvh")
+theme_override_styles/pressed = ExtResource("2_3ifhn")
+theme_override_styles/hover = ExtResource("3_a15dx")
+toggle_mode = true

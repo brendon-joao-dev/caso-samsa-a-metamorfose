@@ -1,6 +1,6 @@
 # **Caso Samsa: A Metamorfose**
 
-**Tagline:** *Gregor Samsa realmente morreu?*
+**Tagline:** Gregor *Samsa realmente morreu?*
 
 **Gêneros:** *Terror, mistério, investigação*
 
@@ -151,6 +151,12 @@ Sistema sonoro: Evite fazer barulho para não ser pego.
       * **Humano:** todos os sentidos do inimigo são os padrões de uma pessoa.  
       * **Barata:** essa forma pode ouvir mais longe, pode perseguir mais rápido e ela pode rondar oculta (andando pelo teto)  
       * **Barata definitiva:** essa forma ouvi o inimigo ainda mais distante, consegue ver ele se andar atrás dela numa certa distância (curta), e pode perseguir oculta, além de não poder sofrer metamorfose para outra fase, nem quando forçada por armas, é mais resistente ao efeito das armas.
+
+**Lanterna:**
+
+- [ ] **Acender:** Ao acender a lanterna deve emitir um feixe de luz capaz de atordoar o inimigo temporáriamente (coisa de segundos) ao ser atingido por esse feixe.
+
+	**OBS:** A lanterna vai ser um item fixo do inventário do jogador.
 
 **Arma:**
 

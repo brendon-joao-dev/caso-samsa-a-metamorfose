@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4wy852xrv28l"]
 
 [ext_resource type="StyleBox" uid="uid://c6xg3hqkydkbh" path="res://scenes/interfaces/cores/barra_vazia.tres" id="1_6vu2j"]
+[ext_resource type="Script" uid="uid://cdxg5t0c3gdj8" path="res://scenes/interfaces/hud.gd" id="1_clveo"]
 [ext_resource type="Texture2D" uid="uid://cyrnq7gpr6c1r" path="res://assets/cursor_pixel/tiles/tile_0133.png" id="1_cpmtm"]
 [ext_resource type="StyleBox" uid="uid://2qyh2unuj8p1" path="res://scenes/interfaces/cores/botao_normal.tres" id="1_q7lvh"]
 [ext_resource type="StyleBox" uid="uid://b861vnrxpw7f0" path="res://scenes/interfaces/cores/botao_pressionado.tres" id="2_3ifhn"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://xea7xbe8xfjv" path="res://assets/cursor_pixel/tiles/tile_0078.png" id="4_de2ps"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1321035823]
+script = ExtResource("1_clveo")
 
 [node name="Padrao" type="Control" parent="." unique_id=1631450567]
 layout_mode = 3
@@ -56,7 +58,6 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/background = ExtResource("1_6vu2j")
 theme_override_styles/fill = ExtResource("2_cpmtm")
-value = 100.0
 show_percentage = false
 
 [node name="Lanterna" type="HBoxContainer" parent="Padrao/MarginBarras/Barras" unique_id=383691895]
@@ -78,7 +79,6 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/background = ExtResource("1_6vu2j")
 theme_override_styles/fill = ExtResource("2_cpmtm")
-value = 100.0
 show_percentage = false
 
 [node name="MarginInventario" type="MarginContainer" parent="Padrao" unique_id=39443975]

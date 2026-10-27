@@ -11,4 +11,5 @@
 [node name="Personagem" parent="." unique_id=1287101925 instance=ExtResource("2_h3njr")]
 position = Vector2(192, 112)
 
-[node name="Hud" parent="." unique_id=1321035823 instance=ExtResource("3_h3njr")]
+[node name="Hud" parent="." unique_id=1321035823 node_paths=PackedStringArray("jogador") instance=ExtResource("3_h3njr")]
+jogador = NodePath("../Personagem")

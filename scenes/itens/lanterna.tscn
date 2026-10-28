@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bws84qlcwhyko"]
+
+[ext_resource type="Texture2D" uid="uid://bm3txoobc8ql1" path="res://assets/luzes/feixe_lanterna.png" id="1_prfsu"]
+
+[node name="Lanterna" type="Node2D" unique_id=1469916548]
+
+[node name="Interacao" type="RayCast2D" parent="." unique_id=1331697540]
+
+[node name="Luz" type="PointLight2D" parent="." unique_id=1843084663]
+texture = ExtResource("1_prfsu")

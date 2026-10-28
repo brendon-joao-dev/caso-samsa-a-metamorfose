@@ -129,8 +129,8 @@ Sistema sonoro: Evite fazer barulho para não ser pego.
 
 **Jogador:**
 
-- [ ] **Movimento em 8 direções:** O jogador deve poder se mover em 8 direções com suas animações de forma coerente.  
-- [ ] **Correr:** O jogador deve poder correr nas oito direções ficando um pouco mais rápido mas consumindo stamina  
+- [X] **Movimento em 8 direções:** O jogador deve poder se mover em 8 direções com suas animações de forma coerente.  
+- [X] **Correr:** O jogador deve poder correr nas oito direções ficando um pouco mais rápido mas consumindo stamina  
 - [ ] **Ouvir:** O jogador deve poder escutar barulhos feitos na sua área de escuta.  
 - [ ] **Interação com ambiente:** O jogador deve poder interagir com o ambiente, abrindo portas, gavetas, armários entre outros.  
 - [ ] **Pegar itens:** O jogador deve poder pegar itens um a um e largar eles.  

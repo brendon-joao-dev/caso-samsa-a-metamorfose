@@ -15,11 +15,11 @@ var velocidade: float
 # Variáveis alteravéis
 @export_category("Variáveis")
 @export var velocidade_normal: float = 100.0
-@export var velocidade_correndo: float = 150.0
+@export var velocidade_correndo: float = 200.0
 @export var stamina_max = 100.0
 @export var stamina_min: float = 0.0
 @export var stamina_atual: float
-@export var passos_stamina: float = 20
+@export var passo_stamina: float = 20.0
 
 # Sinais
 signal stamina_mudou(valor_atual)
@@ -44,6 +44,11 @@ func _physics_process(_delta: float) -> void:
 		stamina_atual = max(0.0, stamina_atual)
 		
 		stamina_mudou.emit(stamina_atual)
+	elif (stamina_atual < 100):
+		velocidade = velocidade_normal
+		stamina_atual += (passo_stamina/2) * _delta
+		
+		stamina_mudou.emit(stamina_atual)
 	else:
 		velocidade = velocidade_normal
 		
@@ -54,7 +59,7 @@ func _physics_process(_delta: float) -> void:
 
 func atualizar_animacoes():
 	var andando = direcao != Vector2.ZERO
-	var correndo = andando and Input.is_action_just_pressed("correr")
+	var correndo = andando and Input.is_action_just_pressed("correr") and stamina_atual > 0
 	var interagindo = Input.is_action_just_pressed("interagir")
 	
 	controlador_animacoes.set("parameters/conditions/esta_parado", !andando)

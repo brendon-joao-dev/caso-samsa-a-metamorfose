@@ -137,6 +137,8 @@ Sistema sonoro: Evite fazer barulho para não ser pego.
 - [ ] **Analisar:** O jogador deve poder interagir com documentos e fotos pela casa que se abrem na tela para que ele possa ler.   
 - [ ] **Usar itens:** O jogador deve poder usar itens em suas respectivas funções na casa.  
 - [ ] **Atirar:** O jogador deve poder atirar na direção que está olhando se estiver em posse de uma arma.
+- [ ] **Usar lanterna:** O jogador deve poder acender sua lanterna que é um item fixo e ela deve iluminar e a direção que ele olha.
+
 
 **Inimigo:**
 

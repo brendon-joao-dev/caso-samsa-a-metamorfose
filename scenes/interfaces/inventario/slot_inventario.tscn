@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ccwu851glri8c"]
+
+[ext_resource type="StyleBox" uid="uid://2qyh2unuj8p1" path="res://scenes/interfaces/cores/botao_normal.tres" id="1_gowxp"]
+[ext_resource type="StyleBox" uid="uid://b861vnrxpw7f0" path="res://scenes/interfaces/cores/botao_pressionado.tres" id="2_3mi24"]
+[ext_resource type="StyleBox" uid="uid://c1ic55p7vh5k4" path="res://scenes/interfaces/cores/botao_selecionado.tres" id="3_dqla7"]
+[ext_resource type="ButtonGroup" uid="uid://dovsr6ft0h7eb" path="res://scenes/interfaces/inventario/grupo_slots_inventario.tres" id="4_5sh0p"]
+
+[node name="Slot" type="Button" unique_id=92438907]
+custom_minimum_size = Vector2(64, 64)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = ExtResource("1_gowxp")
+theme_override_styles/pressed = ExtResource("2_3mi24")
+theme_override_styles/hover = ExtResource("3_dqla7")
+toggle_mode = true
+button_group = ExtResource("4_5sh0p")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=283080629]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2

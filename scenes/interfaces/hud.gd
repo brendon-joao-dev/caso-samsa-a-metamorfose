@@ -1,13 +1,14 @@
 extends CanvasLayer
 
-# Deixa selecionar o jogadorr associado na montagem do cenário
+# Nós que a HUD faz uso
+@export_category("Nós associados")
 @export var jogador: Personagem
 
-# Pega barra de stamina pelo unique name
+# Pegando elementos pelo unique name
 @onready var barra_stamina: ProgressBar = %BarraStamina
 
 func _ready() -> void:
-#	Conecta o sinal do player no
+#	Conecta os sinais usados pela HUD
 	jogador.stamina_mudou.connect(_mudar_barra_stamina)
 
 func _mudar_barra_stamina(nova_stamina: float) -> void:

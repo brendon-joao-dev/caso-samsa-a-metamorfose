@@ -28,7 +28,7 @@ var coletavel: Coletavel = null
 @export var stamina_atual: float
 @export var passo_stamina: float = 20.0
 @export var inventario: Array[Coletavel] = []
-@export var slots_inventario: int = 2
+@export var numero_slots_inventario: int = 2
 
 # Sinais
 signal stamina_mudou(valor_atual)
@@ -85,7 +85,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("analisar"):
 		pass
 
-func _atualizar_animacoes():
+func _atualizar_animacoes() -> void:
 	var andando = direcao != Vector2.ZERO
 	var correndo = andando and Input.is_action_just_pressed("correr") and stamina_atual > 0
 	var interagindo = Input.is_action_just_pressed("interagir")
@@ -106,8 +106,8 @@ func _atualizar_animacoes():
 	controlador_animacoes.set("parameters/run/blend_position", blend_dir)
 	controlador_animacoes.set("parameters/interact/blend_position", blend_dir)
 
-func _coletar_item():
-	if inventario.size() < slots_inventario:
+func _coletar_item() -> void:
+	if inventario.size() < numero_slots_inventario:
 		inventario.append(coletavel)
 		item_adicionado.emit(coletavel)
 	else:

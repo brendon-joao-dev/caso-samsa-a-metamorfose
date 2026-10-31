@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://b861vnrxpw7f0" path="res://scenes/interfaces/cores/botao_pressionado.tres" id="2_3mi24"]
 [ext_resource type="StyleBox" uid="uid://c1ic55p7vh5k4" path="res://scenes/interfaces/cores/botao_selecionado.tres" id="3_dqla7"]
 [ext_resource type="ButtonGroup" uid="uid://dovsr6ft0h7eb" path="res://scenes/interfaces/inventario/grupo_slots_inventario.tres" id="4_5sh0p"]
+[ext_resource type="Script" uid="uid://cv8h7cg4gfe1l" path="res://scenes/interfaces/inventario/slot_inventario.gd" id="5_4pbqb"]
 
 [node name="Slot" type="Button" unique_id=92438907]
 custom_minimum_size = Vector2(64, 64)
@@ -14,6 +15,7 @@ theme_override_styles/pressed = ExtResource("2_3mi24")
 theme_override_styles/hover = ExtResource("3_dqla7")
 toggle_mode = true
 button_group = ExtResource("4_5sh0p")
+script = ExtResource("5_4pbqb")
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=283080629]
 custom_minimum_size = Vector2(48, 48)

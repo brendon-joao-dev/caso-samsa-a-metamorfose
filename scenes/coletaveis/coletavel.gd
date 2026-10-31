@@ -6,3 +6,10 @@ extends Area2D
 @export var nome: String
 @export var sprite: Texture2D
 @export var icone: Texture2D
+@export var descricao: String
+
+func _construtor() -> void:
+	$Sprite.texture = sprite
+
+func _ready() -> void:
+	_construtor()

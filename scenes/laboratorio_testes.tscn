@@ -3,13 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://c7e1fiwkjt1ij" path="res://scenes/terreno/cenario.tscn" id="1_nmont"]
 [ext_resource type="PackedScene" uid="uid://bpqyc5g83nxdx" path="res://scenes/personagens/personagem.tscn" id="2_h3njr"]
 [ext_resource type="PackedScene" uid="uid://c4wy852xrv28l" path="res://scenes/interfaces/hud.tscn" id="3_h3njr"]
+[ext_resource type="PackedScene" uid="uid://bgw4xm5gm4dr3" path="res://scenes/coletaveis/coletavel.tscn" id="4_nlg22"]
+[ext_resource type="Texture2D" uid="uid://b748encbfkhx6" path="res://assets/input_pixel/tiles/tile_0010.png" id="5_8pad8"]
+[ext_resource type="Texture2D" uid="uid://d3urs7374eciq" path="res://assets/input_pixel/tiles/tile_0006.png" id="6_ol5di"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_nlg22"]
 
 [node name="LaboratorioTestes" type="Node2D" unique_id=2055708587]
+y_sort_enabled = true
 
 [node name="Cenario" parent="." unique_id=121263673 instance=ExtResource("1_nmont")]
 
-[node name="Personagem" parent="." unique_id=1287101925 instance=ExtResource("2_h3njr")]
-position = Vector2(192, 112)
+[node name="Personagem" parent="." unique_id=1287101925 node_paths=PackedStringArray("hud") instance=ExtResource("2_h3njr")]
+position = Vector2(200, 120)
+collision_layer = 2
+collision_mask = 2
+hud = NodePath("../Hud")
 
 [node name="Hud" parent="." unique_id=1321035823 node_paths=PackedStringArray("jogador") instance=ExtResource("3_h3njr")]
 jogador = NodePath("../Personagem")
+grupo_slots_inventario = SubResource("ButtonGroup_nlg22")
+tamanho_slot_inventario = Vector2(64, 64)
+tamanho_slot_inventario_selecionado = Vector2(80, 80)
+
+[node name="Coletavel" parent="." unique_id=1637478728 instance=ExtResource("4_nlg22")]
+position = Vector2(312, 160)
+id = 1
+nome = "Botão teste"
+sprite = ExtResource("5_8pad8")
+icone = ExtResource("6_ol5di")

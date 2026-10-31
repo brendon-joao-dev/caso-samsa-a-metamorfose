@@ -12,6 +12,8 @@
 script = ExtResource("1_clveo")
 slot_inventario = ExtResource("7_de2ps")
 grupo_slots_inventario = ExtResource("9_wtmgp")
+tamanho_slot_inventario = null
+tamanho_slot_inventario_selecionado = null
 
 [node name="Padrao" type="Control" parent="." unique_id=1631450567]
 layout_mode = 3

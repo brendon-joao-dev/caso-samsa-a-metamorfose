@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://10wjsm38mh3t" path="res://scenes/coletaveis/coletavel.gd" id="1_ilwj4"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0xm43"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0ie"]
+size = Vector2(16, 16)
 
 [node name="Coletavel" type="Area2D" unique_id=1637478728]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ilwj4")
 
 [node name="Forma" type="CollisionShape2D" parent="." unique_id=1429064317]
-shape = SubResource("CircleShape2D_0xm43")
+shape = SubResource("RectangleShape2D_vn0ie")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=184343390]

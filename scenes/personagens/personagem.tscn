@@ -1281,9 +1281,11 @@ position = Vector2(0, -10)
 zoom = Vector2(3.5, 3.5)
 
 [node name="AreaInteracao" type="Area2D" parent="." unique_id=201583518]
+collision_layer = 2
+collision_mask = 2
 
 [node name="FormaInteracao" type="CollisionShape2D" parent="AreaInteracao" unique_id=456144876]
 shape = SubResource("RectangleShape2D_vn0ie")
 
-[connection signal="body_entered" from="AreaInteracao" to="." method="_entrou_area_interacao"]
-[connection signal="body_exited" from="AreaInteracao" to="." method="_saiu_area_interacao"]
+[connection signal="area_entered" from="AreaInteracao" to="." method="_entrou_area_interacao"]
+[connection signal="area_exited" from="AreaInteracao" to="." method="_saiu_area_interacao"]

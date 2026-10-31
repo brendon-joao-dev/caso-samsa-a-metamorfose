@@ -17,17 +17,17 @@ extends CanvasLayer
 @export var tamanho_slot_inventario_selecionado: Vector2 = Vector2(80, 80)
 
 # Sinais
-signal item_selecionado(indice_slot)
+#signal item_selecionado(indice_slot)
 
 func _ready() -> void:
 #	Conecta os sinais usados pela HUD
 	jogador.stamina_mudou.connect(_mudar_barra_stamina)
 	grupo_slots_inventario.pressed.connect(_controle_inventario)
-	#jogador.item_adicionado.connect()
+	jogador.item_adicionado.connect(_adicionar_item)
 	#jogador.item_removido.connect()
 	
 #	Instancia os slots do inventário dinamicamente
-	for i in range(jogador.slots_inventario):
+	for i in range(jogador.numero_slots_inventario):
 		var novo_slot = slot_inventario.instantiate()
 		novo_slot.button_group = grupo_slots_inventario
 		inventario.add_child(novo_slot)
@@ -48,3 +48,14 @@ func _controle_inventario(slot_selecionado: BaseButton) -> void:
 #			Se não for restaura ele a seu estado padrão
 			else:
 				animador_inventario.tween_property(slot, "custom_minimum_size", tamanho_slot_inventario, 0.1)
+
+func _adicionar_item(item: Coletavel) -> void:
+	for slot in inventario.get_children():
+		if slot is Slot:
+			if slot.vazio:
+				slot.vazio = false
+				slot.item = item
+				slot.icone = item.icone
+				slot.construtor()
+				item.queue_free()
+				break

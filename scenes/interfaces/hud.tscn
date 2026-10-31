@@ -5,12 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://cyrnq7gpr6c1r" path="res://assets/cursor_pixel/tiles/tile_0133.png" id="1_cpmtm"]
 [ext_resource type="StyleBox" uid="uid://458um4dkk265" path="res://scenes/interfaces/cores/barra_cheia.tres" id="2_cpmtm"]
 [ext_resource type="Texture2D" uid="uid://xea7xbe8xfjv" path="res://assets/cursor_pixel/tiles/tile_0078.png" id="4_de2ps"]
-[ext_resource type="Script" uid="uid://djmv4f2p11ttt" path="res://scenes/interfaces/inventario/inventario.gd" id="6_cpmtm"]
 [ext_resource type="PackedScene" uid="uid://ccwu851glri8c" path="res://scenes/interfaces/inventario/slot_inventario.tscn" id="7_de2ps"]
 [ext_resource type="ButtonGroup" uid="uid://dovsr6ft0h7eb" path="res://scenes/interfaces/inventario/grupo_slots_inventario.tres" id="9_wtmgp"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1321035823]
 script = ExtResource("1_clveo")
+slot_inventario = ExtResource("7_de2ps")
+grupo_slots_inventario = ExtResource("9_wtmgp")
 
 [node name="Padrao" type="Control" parent="." unique_id=1631450567]
 layout_mode = 3
@@ -95,9 +96,7 @@ theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 20
 
 [node name="Inventario" type="VBoxContainer" parent="Padrao/MarginInventario" unique_id=948045717]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
-script = ExtResource("6_cpmtm")
-slot_inventario = ExtResource("7_de2ps")
-grupo_slots_inventario = ExtResource("9_wtmgp")

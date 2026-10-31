@@ -1,3 +1,4 @@
+class_name Inventario
 extends VBoxContainer
 
 # Nós que o inventário usa
@@ -31,8 +32,6 @@ func _controle_inventario(slot_selecionado: BaseButton) -> void:
 #			Se for o slot selecionado anima ele
 			if slot == slot_selecionado:
 				animador_inventario.tween_property(slot, "custom_minimum_size", tamanho_slot_inventario_selecionado, 0.1)
-				
-				#self.move_child(slot, 0);
 #			Se não for restaura ele a seu estado padrão
 			else:
 				animador_inventario.tween_property(slot, "custom_minimum_size", tamanho_slot_inventario, 0.1)

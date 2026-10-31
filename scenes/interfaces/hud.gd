@@ -1,3 +1,4 @@
+class_name Hud
 extends CanvasLayer
 
 # Nós que a HUD faz uso

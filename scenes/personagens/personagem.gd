@@ -50,19 +50,25 @@ func _physics_process(_delta: float) -> void:
 #		Move a área 16px pra direção que o personagem está olhando
 		area_interacao.position = 16 * ultima_direcao
 	
+#	Corre se apertar o botão e tiver stamina
 	if direcao != Vector2.ZERO and Input.is_action_pressed("correr") and stamina_atual > 0:
 		velocidade = velocidade_correndo
 		
+#		Diminui a stamina até chegar em 0
 		stamina_atual -= passo_stamina * _delta
 		stamina_atual = max(0.0, stamina_atual)
 		
+#		Manda sinal que a stamina mudou
 		stamina_mudou.emit(stamina_atual)
+#	Se a stamina não estiver cheia
 	elif (stamina_atual < 100):
 		velocidade = velocidade_normal
+#		Recupera a stamina na metade da velocidade que gastou
 		stamina_atual += (passo_stamina/2) * _delta
 		
 		stamina_mudou.emit(stamina_atual)
 	else:
+#		Se não tiver stamina, mantém a velocidade normal
 		velocidade = velocidade_normal
 		
 	velocity = direcao * velocidade
@@ -72,6 +78,7 @@ func _physics_process(_delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interagir") or event.is_action_pressed("pegar"):
+#		Se puder interagir ou coletar item, dá prioridade à coleta
 		if interagivel_no_alcance and coletavel_no_alcance:
 			_coletar_item()
 		elif coletavel_no_alcance:
@@ -107,8 +114,11 @@ func _atualizar_animacoes() -> void:
 	controlador_animacoes.set("parameters/interact/blend_position", blend_dir)
 
 func _coletar_item() -> void:
+#	Verifica se tem slot sobrando
 	if inventario.size() < numero_slots_inventario:
+#		Adiciona no inventário lógico do player
 		inventario.append(coletavel)
+#		Emite sinal dizendo que adicionou item
 		item_adicionado.emit(coletavel)
 	else:
 		pass # Mostrar mensagem de inventário cheio

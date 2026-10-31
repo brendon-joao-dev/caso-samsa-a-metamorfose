@@ -1,6 +1,7 @@
 class_name Interagivel
 extends Area2D
 
+# Informações do interagível
 @export_category("Dados do interagivel")
 @export var id: int 
 @export var nome: String

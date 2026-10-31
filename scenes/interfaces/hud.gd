@@ -54,7 +54,7 @@ func _adicionar_item(item: Coletavel) -> void:
 		if slot is Slot:
 			if slot.vazio:
 				slot.vazio = false
-				slot.item = item
+				slot.item = item.salvar()
 				slot.icone = item.icone
 				slot.construtor()
 				item.queue_free()

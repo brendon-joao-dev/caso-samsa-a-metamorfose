@@ -2,15 +2,16 @@ class_name Personagem
 extends CharacterBody2D
 
 # Variáveis de inicialização
-# Pega o próprio AnimationTree como controlador
 @onready var controlador_animacoes: AnimationTree = $ControladorAnimacoes
+@onready var area_interacao: Area2D = $AreaInteracao
 
 # Variáveis de movimento
 var direcao: Vector2
 var ultima_direcao: Vector2
 var velocidade: float
 
-# Variáveis de condição
+# Variáveis de estado
+var item_coletavel: Coletavel = null
 
 # Variáveis alteravéis
 @export_category("Variáveis")
@@ -36,6 +37,8 @@ func _physics_process(_delta: float) -> void:
 	
 	if direcao != Vector2.ZERO:
 		ultima_direcao = direcao
+#		Move a área 16px pra direção que o personagem está olhando
+		area_interacao.position = 16 * ultima_direcao
 	
 	if direcao != Vector2.ZERO and Input.is_action_pressed("correr") and stamina_atual > 0:
 		velocidade = velocidade_correndo
@@ -55,9 +58,9 @@ func _physics_process(_delta: float) -> void:
 	velocity = direcao * velocidade
 	move_and_slide()
 	
-	atualizar_animacoes()
+	_atualizar_animacoes()
 
-func atualizar_animacoes():
+func _atualizar_animacoes():
 	var andando = direcao != Vector2.ZERO
 	var correndo = andando and Input.is_action_just_pressed("correr") and stamina_atual > 0
 	var interagindo = Input.is_action_just_pressed("interagir")
@@ -65,7 +68,11 @@ func atualizar_animacoes():
 	controlador_animacoes.set("parameters/conditions/esta_parado", !andando)
 	controlador_animacoes.set("parameters/conditions/esta_andando", andando)
 	controlador_animacoes.set("parameters/conditions/esta_correndo", correndo)
-	controlador_animacoes.set("parameters/conditions/esta_interagindo", interagindo)
+	
+	if interagindo:
+		controlador_animacoes.set("parameters/conditions/esta_interagindo", true)
+	else:
+		controlador_animacoes.set("parameters/conditions/esta_interagindo", false)
 	
 	var blend_dir = direcao if direcao != Vector2.ZERO else ultima_direcao
 	
@@ -73,3 +80,13 @@ func atualizar_animacoes():
 	controlador_animacoes.set("parameters/walk/blend_position", blend_dir)
 	controlador_animacoes.set("parameters/run/blend_position", blend_dir)
 	controlador_animacoes.set("parameters/interact/blend_position", blend_dir)
+
+func _entrou_area_interacao(body: Node2D) -> void:
+	if body is Coletavel:
+		item_coletavel = body
+
+
+
+func _saiu_area_interacao(body: Node2D) -> void:
+	if body is Coletavel:
+		item_coletavel = null

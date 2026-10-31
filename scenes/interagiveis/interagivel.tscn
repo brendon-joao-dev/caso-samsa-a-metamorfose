@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://2uwk4ql0uu74"]
+
+[ext_resource type="Script" uid="uid://lixhex20cmvb" path="res://interagivel.gd" id="1_0o6o7"]
+
+[node name="Interagivel" type="Area2D" unique_id=1100550177]
+script = ExtResource("1_0o6o7")
+
+[node name="Forma" type="CollisionShape2D" parent="." unique_id=1728135899]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=357031412]
+
+[node name="Animador" type="AnimationPlayer" parent="." unique_id=899148244]
+
+[node name="EmissorSom" type="AudioStreamPlayer2D" parent="." unique_id=59005282]

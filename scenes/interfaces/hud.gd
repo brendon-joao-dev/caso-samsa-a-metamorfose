@@ -1,6 +1,10 @@
 class_name Hud
 extends CanvasLayer
 
+# Pegando elementos pelo unique name
+@onready var barra_stamina: ProgressBar = %BarraStamina
+@onready var inventario: VBoxContainer = %Inventario
+
 # Nós que a HUD faz uso
 @export_category("Nós associados")
 @export var jogador: Personagem
@@ -12,10 +16,8 @@ extends CanvasLayer
 @export var tamanho_slot_inventario: Vector2 = Vector2(64, 64)
 @export var tamanho_slot_inventario_selecionado: Vector2 = Vector2(80, 80)
 
-
-# Pegando elementos pelo unique name
-@onready var barra_stamina: ProgressBar = %BarraStamina
-@onready var inventario: VBoxContainer = %Inventario
+# Sinais
+signal item_selecionado(indice_slot)
 
 func _ready() -> void:
 #	Conecta os sinais usados pela HUD

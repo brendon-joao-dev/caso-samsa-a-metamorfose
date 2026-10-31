@@ -232,23 +232,29 @@ Pode ser adicionada uma representação visual onde relacionas os controlos fís
 * Mover para esquerda: A, Seta para Esquerda  
 * Mover para baixo: S, Seta para Baixo  
 * Mover para direita: D, Seta para Direita  
-* Interagir / Pegar / Analisar: E, Botão Direito do Mouse (RMB)  
+* Interagir / Pegar: E, Botão Direito do Mouse (RMB)  
+* Dropar: Q  
+* Analisar: R  
 * Usar / Atirar: Espaço, Botão Esquerdo do Mouse (LMB)  
 * Correr: Shift Esquerdo, Ctrl Esquerdo  
 * Pausar: Esc, Tab
 
 **Controle (Gamepad \- Padrão Xbox / PlayStation)**
 
-* Mover (8 direções): Analógico Esquerdo (L-Stick) (Alternativa: D-Pad / Setas)  
-* Interagir / Pegar / Analisar: Botão X (Xbox) / Quadrado (PlayStation) (Ou Botão A / X para confirmação)  
-* Usar / Atirar: Gatilho Direito (RT / R2) (Alternativa: Botão B / Círculo)  
+* Mover (8 direções): Analógico Esquerdo (L-Stick) / D-Pad   
+* Interagir / Pegar: Botão X (Xbox) / Quadrado (PlayStation)  
+* Analisar: Botão Y (Xbox) / Triângulo (PlayStation)  
+* Dropar: Botão B (Xbox) / Círculo (Playstation)  
+* Usar / Atirar: Gatilho Direito (RT / R2) / Botão B / Círculo  
 * Correr: Pressionar Analógico Esquerdo (L3) (Alternativa: Gatilho Esquerdo LT / L2)  
 * Pausar: Botão Start / Options
 
 **Celular (Touch / Mobile)**
 
 * Mover (8 direções): Analógico Virtual Dinâmico / Flutuante (Esquerda da tela) com recurso de Auto-Run por zona de pressão na borda máxima.  
-* Interagir / Pegar / Analisar: Botão de Ação dedicado grande (Direita da tela, próximo ao polegar) com ícone contextual (Mão/Olho).  
+* Interagir / Pegar: Botão de Ação dedicado grande (Direita da tela, próximo ao polegar) com ícone contextual Mão/Olho.  
+* Analisar: Botão de Ação dedicado (Direita da tela, próximo ao polegar) com ícone de Lupa.  
+* Dropar: Botão de Ação para pegar quando não houver item para pegar, com ícone de mão soltando  
 * Usar / Atirar: Botão de Disparo dedicado (Direita da tela, permitindo atirar na direção atual do movimento sem perder o controle do analógico).  
 * Correr: Integrado ao Analógico Virtual (Empurrar o analógico até o limite externo ativa a corrida automaticamente, liberando a tela de botões poluídos).  
 * Pausar: Ícone discreto de Pausa (Engrenagem / Duas Barras) fixado no canto superior direito da tela.

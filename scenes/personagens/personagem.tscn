@@ -1248,12 +1248,6 @@ size = Vector2(16, 16)
 
 [node name="Personagem" type="CharacterBody2D" unique_id=1287101925]
 script = ExtResource("1_tv6s7")
-velocidade_normal = null
-velocidade_correndo = null
-stamina_max = null
-stamina_min = null
-stamina_atual = null
-passo_stamina = null
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1363879087]
 position = Vector2(0, -16)

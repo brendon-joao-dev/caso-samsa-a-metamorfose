@@ -10,20 +10,30 @@ var direcao: Vector2
 var ultima_direcao: Vector2
 var velocidade: float
 
-# Variáveis de estado
-var item_coletavel: Coletavel = null
+# Variáveis de interação
+var interagivel_no_alcance: bool
+var interagivel: Interagivel = null
+var coletavel_no_alcance: bool
+var coletavel: Coletavel = null
+
+@export_category("Nós associados")
+@export var hud: Hud
 
 # Variáveis alteravéis
-@export_category("Variáveis")
+@export_category("Dados personagem")
 @export var velocidade_normal: float = 100.0
 @export var velocidade_correndo: float = 200.0
-@export var stamina_max = 100.0
+@export var stamina_max: float = 100.0
 @export var stamina_min: float = 0.0
 @export var stamina_atual: float
 @export var passo_stamina: float = 20.0
+@export var inventario: Array[Coletavel] = []
+@export var slots_inventario: int = 2
 
 # Sinais
 signal stamina_mudou(valor_atual)
+signal item_adicionado(item)
+#signal item_removido(item)
 
 func _ready() -> void:
 #	Garante que o controlador de animações está ativo
@@ -60,6 +70,21 @@ func _physics_process(_delta: float) -> void:
 	
 	_atualizar_animacoes()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interagir") or event.is_action_pressed("pegar"):
+		if interagivel_no_alcance and coletavel_no_alcance:
+			_coletar_item()
+		elif coletavel_no_alcance:
+			_coletar_item()
+		elif interagivel_no_alcance:
+			pass
+		else:
+			pass
+	elif event.is_action_pressed("dropar"):
+		pass
+	elif event.is_action_pressed("analisar"):
+		pass
+
 func _atualizar_animacoes():
 	var andando = direcao != Vector2.ZERO
 	var correndo = andando and Input.is_action_just_pressed("correr") and stamina_atual > 0
@@ -81,12 +106,33 @@ func _atualizar_animacoes():
 	controlador_animacoes.set("parameters/run/blend_position", blend_dir)
 	controlador_animacoes.set("parameters/interact/blend_position", blend_dir)
 
+func _coletar_item():
+	if inventario.size() < slots_inventario:
+		inventario.append(coletavel)
+		item_adicionado.emit(coletavel)
+	else:
+		pass # Mostrar mensagem de inventário cheio
+
 func _entrou_area_interacao(body: Node2D) -> void:
 	if body is Coletavel:
-		item_coletavel = body
-
-
+		coletavel_no_alcance = true
+		coletavel = body
+	else:
+		coletavel_no_alcance = false 
+		coletavel = null
+	
+	if body is Interagivel:
+		interagivel_no_alcance = true
+		interagivel = body
+	else:
+		interagivel_no_alcance = false
+		interagivel = null
 
 func _saiu_area_interacao(body: Node2D) -> void:
 	if body is Coletavel:
-		item_coletavel = null
+		coletavel_no_alcance = false
+		coletavel = null
+	
+	if body is Interagivel:
+		interagivel_no_alcance = false
+		interagivel = null

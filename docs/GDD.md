@@ -129,16 +129,15 @@ Sistema sonoro: Evite fazer barulho para não ser pego.
 
 **Jogador:**
 
-- [X] **Movimento em 8 direções:** O jogador deve poder se mover em 8 direções com suas animações de forma coerente.  
-- [X] **Correr:** O jogador deve poder correr nas oito direções ficando um pouco mais rápido mas consumindo stamina  
+- [x] ~~**Movimento em 8 direções:** O jogador deve poder se mover em 8 direções com suas animações de forma coerente.~~  
+- [x] ~~**Correr:** O jogador deve poder correr nas oito direções ficando um pouco mais rápido mas consumindo stamina~~  
 - [ ] **Ouvir:** O jogador deve poder escutar barulhos feitos na sua área de escuta.  
 - [ ] **Interação com ambiente:** O jogador deve poder interagir com o ambiente, abrindo portas, gavetas, armários entre outros.  
 - [ ] **Pegar itens:** O jogador deve poder pegar itens um a um e largar eles.  
 - [ ] **Analisar:** O jogador deve poder interagir com documentos e fotos pela casa que se abrem na tela para que ele possa ler.   
 - [ ] **Usar itens:** O jogador deve poder usar itens em suas respectivas funções na casa.  
-- [ ] **Atirar:** O jogador deve poder atirar na direção que está olhando se estiver em posse de uma arma.
+- [ ] **Atirar:** O jogador deve poder atirar na direção que está olhando se estiver em posse de uma arma.  
 - [ ] **Usar lanterna:** O jogador deve poder acender sua lanterna que é um item fixo e ela deve iluminar e a direção que ele olha.
-
 
 **Inimigo:**
 
@@ -149,10 +148,10 @@ Sistema sonoro: Evite fazer barulho para não ser pego.
 - [ ] **“Entrar nas paredes”:** O inimigo deve poder entrar em certos pontos nas paredes pela casa e reaparecer em outro ponto da casa (aleatoriamente) se não encontrar o jogador por um certo tempo.  
 - [ ] **Levar tiro:** O inimigo deve poder receber um tiro do jogador, o que faz ele ativar a função “Entrar nas paredes” onde estiver e reaparecer em outro lugar da casa depois de um tempo (depende da arma).  
 - [ ] **Metamorfose:** O inimigo deve poder se transformar de tempos em tempos em outro ser, alterando suas habilidade de Perseguir, Ouvir e Rondar. Sempre ativado após reaparecer de “Entrar nas paredes”.   
-      As possíveis formas são:  
-      * **Humano:** todos os sentidos do inimigo são os padrões de uma pessoa.  
-      * **Barata:** essa forma pode ouvir mais longe, pode perseguir mais rápido e ela pode rondar oculta (andando pelo teto)  
-      * **Barata definitiva:** essa forma ouvi o inimigo ainda mais distante, consegue ver ele se andar atrás dela numa certa distância (curta), e pode perseguir oculta, além de não poder sofrer metamorfose para outra fase, nem quando forçada por armas, é mais resistente ao efeito das armas.
+  As possíveis formas são:  
+  * **Humano:** todos os sentidos do inimigo são os padrões de uma pessoa.  
+  * **Barata:** essa forma pode ouvir mais longe, pode perseguir mais rápido e ela pode rondar oculta (andando pelo teto)  
+  * **Barata definitiva:** essa forma ouvi o inimigo ainda mais distante, consegue ver ele se andar atrás dela numa certa distância (curta), e pode perseguir oculta, além de não poder sofrer metamorfose para outra fase, nem quando forçada por armas, é mais resistente ao efeito das armas.
 
 **Lanterna:**
 
@@ -164,19 +163,31 @@ Sistema sonoro: Evite fazer barulho para não ser pego.
 
 - [ ] **Disparar:** A arma ao ser acionada pelo jogador, deve disparar um projétil ou área de efeito que pode atingir o inimigo e ativas sua função “Entrar nas paredes”, e o manter inativo por um certo tempo além de o obrigar a voltar a forma humana se estiver na forma barata.
 
+**Hud:**
+
+- [ ] **Observar o jogador:** A HUD deve observar o jogador e se alterar de acordo com os valores dele.
+
+**Salvamento:**
+
+- [ ] **Salvar jogador:** Deve salvar a posição do personagem no mundo (vetor X e Y), os itens no seu inventário e as informações em seu diário.  
+- [ ] **Salvar inimigo:** Deve salvar a posição do inimigo no mundo (vetor X e Y). seu estado de transformação atual e se ele está em perseguição ou não.  
+- [ ] **Salvar coletáveis:** Deve salvar os itens em um arquivo com seu id e sua posição no mundo (vetor X e Y).  
+- [ ] **Salvar Interagíveis:** Deve salvar o id dos puzzles já resolvidos e se tiverem mais de um estado de solução, em qual estão.
+
 #### Mecânicas passivas:
 
 **Armários, baús, gavetas etc (Interagível):**
 
 - [ ] **Ser interagido:** O interagível deve poder sofrer uma interação do jogador sendo aberto por ele e revelando o item que há dentro, se houver, ou tornando visível a sala se for uma porta.
 
-**Documentos, diários, fotos etc (Analisável):**
+**Documentos, diários, fotos, descrição de itens etc (Analisável):**
 
 - [ ] **Ser analisado:** O analisável deve poder ser analisado pelo jogador, apresentando parte determinada da narrativa do jogo e dicas de puzzles ou mecânicas. Após ser analisado uma primeira vez na run fica salvo no Diário do investigador.
 
 **Itens e armas (Coletável):**
 
 - [ ] **Ser coletado:** O coletável deve poder ser coletado pelo jogador e ser carregado por ele.  
+- [ ] **Ser largado:** O coletável deve poder ser largado pelo jogador a qualquer momento e em qualquer lugar.  
 - [ ] **Disparar ação:** O coletável pode disparar uma ação quando o jogador usa ele em um resolvível.
 
 **Puzzle e trancas (Resolvível):**
